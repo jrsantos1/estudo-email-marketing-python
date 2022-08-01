@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body{}
+    #conteudo{
+      background-color: aquamarine;
+      height: auto;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5px;
+    }
+
+
+    
+    </style>
+
+</head>
+<body>
+<div id="conteudo">
+<h1> Olá Mesa, bom dia! </h1>
+<h4> Há alerta em aberto para as mesas abaixo </h4>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Mesa</th>
+        <th scope="col">Alerta</th>
+        <th scope="col">Fundo</th>
+      </tr>
+    </thead>
+      {% for dado in dados %}
+      <tr style="text-align: center">
+        <td style="color: red"> {{dado[0]}} </td>
+        <td> {{dado[1]}} </td>
+        <td> {{dado[2]}} </td>
+      </tr>
+       {% endfor %}
+</table>
+<p> Para mais informações clique no link abaixo </p>
+<a href="http://www.google.com.br"> Relatório Data View </a>
+</div>
+</body>
+</html>
