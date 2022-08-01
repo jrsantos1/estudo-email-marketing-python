@@ -1,7 +1,7 @@
 import win32com.client as wincl
 import os, os.path
 import pandas as pd
-from IPython.display import display
+#from IPython.display import display
 from unittest import loader
 from jinja2 import FileSystemLoader, Environment
 from destinatarios import destinatarios
@@ -9,7 +9,7 @@ from destinatarios import destinatarios
 
 def lerExcel(tabela):
     dados = pd.read_excel(tabela)
-    display(dados)
+    #display(dados)
     cont = 0
     dados_template = []
     for i, col in dados.iterrows():
