@@ -1,7 +1,7 @@
 import win32com.client as wincl
 import os, os.path
 import pandas as pd
-#from IPython.display import display
+from IPython.display import display
 from unittest import loader
 from jinja2 import FileSystemLoader, Environment
 from destinatarios import destinatarios
@@ -13,8 +13,11 @@ def lerExcel(tabela):
     cont = 0
     dados_template = []
     for i, col in dados.iterrows():
+
+        texto_var = f"{col['VAR']:.2%}"
+
         if col['MESA'] == 'SFF' and col['ALERTA'] > 0 and col['ALERTA'] < 3:
-            dados_template.append([col['MESA'], col['ALERTA'], col['FUNDO'], col['VAR']])
+            dados_template.append([col['MESA'], col['ALERTA'], col['FUNDO'], texto_var])
             cont = cont + 1
     if cont > 1:
         print("Cheguei aqui")
