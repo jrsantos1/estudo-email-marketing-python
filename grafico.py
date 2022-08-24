@@ -68,7 +68,7 @@ if dados[dados['liquidezAlerta3'] > 0]['liquidezAlerta3'].count() > 0:
     list_x.append('Liquidez 3')
     colors.append('red')
 
-
+plt.figure(figsize=(6,4))
 y = np.array(list_y)
 x = np.array(list_x)
 fig = plt.bar(x,y, color=colors)

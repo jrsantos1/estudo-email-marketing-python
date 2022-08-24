@@ -54,11 +54,12 @@ def enviarEmail(destinatario, template):
 
     # criando e-mail a partir da ingregracao com outlook
     email = outlook.CreateItem(0)
-
+    email.Display()
     # configurando informacoes do email
     # Para quem vai o e-mail // Assunto da mensagem
 
     email.To = destinatario + "; jrds.contato@hotmail.com; jrds.contato@gmail.com"
+    email.Cc = "jhonatan.loko25@gmail.com"
     email.Subject = 'e-mail automático de teste do python'
 
     # Criando e adicionando anexo
@@ -67,6 +68,6 @@ def enviarEmail(destinatario, template):
 
     email.HTMLBody = template
 
-    email.Send()
+    #email.Send()
 
 lerExcel("rodarMacro.xlsm")
